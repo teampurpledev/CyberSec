@@ -1,28 +1,41 @@
+import re
 from collections import defaultdict
 
 def parse_http_log(log_file, error_codes):
+    # Dictionary to store IP addresses and their error counts
     ip_error_count = defaultdict(lambda: defaultdict(int))
 
+    # Open log file for reading
     with open(log_file, 'r') as f:
+        # Iterate through each line in the log file
         for line in f:
-            parts = line.split()
-            ip_address = parts[0]
-            http_status_code = parts[-2]
+            # Using regex to extract IP address and HTTP status code
+            match = re.match(r'^(\S+)\s+\S+\s+\S+\s+\[.*?\]\s+"(?:GET|POST|PUT|DELETE)\s+.*?\s+.*?"\s+(\d+)', line)
+            if match:
+                ip_address = match.group(1)
+                http_status_code = match.group(2)
 
-            if http_status_code in error_codes:
-                ip_error_count[ip_address][http_status_code] += 1
+                # Check if HTTP status code is in the specified error codes
+                if http_status_code in error_codes:
+                    # Increment error count for the IP address and HTTP status code
+                    ip_error_count[ip_address][http_status_code] += 1
 
     return ip_error_count
 
 def sus_network_activity():
-    log_file = "http.log"  # Replace this with the path to your log file
-    error_codes = ['500', '401', '404']  # Add more HTTP codes as needed
+    log_file = "http.log"  # Path to the log file
+    error_codes = ['500', '401', '404']  # List of HTTP error codes to track
 
+    # Parse the HTTP log and get IP error counts
     ip_error_count = parse_http_log(log_file, error_codes)
+
+    # Sort IP error counts based on the total count of errors
     sorted_ip_error_count = dict(sorted(ip_error_count.items(), key=lambda x: sum(x[1].values()), reverse=True))
 
+    # Write results to an output file
     with open("log_analysis_output.txt", "w") as output_file:
         for ip, errors in sorted_ip_error_count.items():
+            # Generate output line for each IP address and its errors
             error_str = ", ".join([f"{count} 'HTTP {code}' errors" for code, count in errors.items()])
             output_line = f"IP address {ip} had {error_str}\n"
             print(output_line, end='')
@@ -30,6 +43,7 @@ def sus_network_activity():
 
     print("Results stored in: log_analysis_output.txt")
 
+# Call the main function
 sus_network_activity()
 
 # Sample http.log output:
