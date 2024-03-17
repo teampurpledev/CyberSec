@@ -4,8 +4,9 @@ The goal of this project is to analyze HTTP logs for unusual activity and notify
 
 ## What does suspicious network behavior mean? 🕵️‍♂️
 
-* HTTP response code 401 - Unauthorized access attempt.
-* HTTP response code 404 - Resource not found.
+* HTTP response code 401 - Unauthorized access attempt. Can detect bruteforce attack (Oliveira 2023).
+* HTTP response code 403 - Forbidden. Can detect XSS attack (Meyer 2008).
+* HTTP response code 404 - Resource not found. Can detect web crawling  as part of reconnaissance.
 * HTTP response code 500 - Internal server error.
 
 ## How does it work? 🛠️
@@ -32,6 +33,15 @@ The goal of this project is to analyze HTTP logs for unusual activity and notify
 
 * Python 3.x
 * `smtplib` - Python SMTP library for sending emails
+
+## References 📚
+
+> Monitor for many failed authentication attempts across various accounts that may result from password spraying attempts.
+
+Oliveira, A. (2023). *Brute Force*. Brute Force, Technique T1110 - Enterprise | MITRE ATT&CK®. https://attack.mitre.org/techniques/T1110/
+
+Meyer, R. (2008). *Detecting Attacks on Web Applications*. GIAC. https://www.giac.org/paper/gcia/1996/detecting-attacks-web-applications-log-files/106864
+
 
 ## Contributors 🙌
 

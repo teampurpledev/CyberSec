@@ -24,7 +24,7 @@ def parse_http_log(log_file, error_codes):
 
 def sus_network_activity():
     log_file = "http.log"  # Path to the log file
-    error_codes = ['500', '401', '404']  # List of HTTP error codes to track
+    error_codes = ['401', '403', '404', '500']  # List of HTTP error codes to track
 
     # Parse the HTTP log and get IP error counts
     ip_error_count = parse_http_log(log_file, error_codes)
