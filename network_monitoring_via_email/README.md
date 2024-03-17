@@ -6,17 +6,33 @@ The goal of this project is to analyze HTTP logs for unusual activity and notify
 
 * HTTP response code 401 - Unauthorized access attempt. Can detect bruteforce attack (Oliveira 2023).
 * HTTP response code 403 - Forbidden. Can detect XSS attack (Meyer 2008).
-* HTTP response code 404 - Resource not found. Can detect web crawling  as part of reconnaissance.
+* HTTP response code 404 - Resource not found. Can detect web crawling reconnaissance.
 * HTTP response code 500 - Internal server error.
 
 ## How does it work? 🛠️
 
-1. The script `server/sus_network_activity.py` parses the HTTP logs to identify suspicious activities based on predefined error codes mentioned above.
-2. The script `server/send_email.py` notifies the user via the predefined email address. Requires a valid [Gmail app password](https://support.google.com/accounts/answer/185833?hl=en) to use.
+1. The bash script `client/copy_http_log.sh` copies the HTTP log data from the client machines, to the server's `http.log` file
+2. The script `server/sus_network_activity.py` parses the HTTP logs to identify suspicious activities based on predefined error codes mentioned above.
+3. The script `server/send_email.py` notifies the user via the predefined email address. Requires a valid [Gmail app password](https://support.google.com/accounts/answer/185833?hl=en) to use.
 
 ## How to use it? 🚀
 
-### Generating a weekly report
+### Client - sending files to server
+
+Recommendation: run this in a virtualized machine (VM) or secure virtual environment.
+
+1. In a text editor, open the `client/copy_http_log.sh` and replace `source_hostname` and `destination_hostname` with the actual hostnames or IP addresses of the source and destination machines.
+2. Replace `/path/to/source/log.log` and `/path/to/destination/http.log` with the actual paths of the source log file and the destination log file respectively.
+3. Open a terminal
+4. Run `crontab -e` to edit your cron jobs.
+5. Add the following lines to schedule the script to run the script daily at 11:59PM:
+
+```
+59 23 * * * path/to/copy_http_log.sh
+```
+
+
+### Server - Generating a weekly report
 
 1. In a text editor, open the `sus_network_activity.py` and modify the `http.log` file path and error codes in the script as needed.
 2. Open the `send_email.py` and modify the `sender_email`, `password`, and `receiver_email` values
