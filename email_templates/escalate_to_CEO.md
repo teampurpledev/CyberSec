@@ -9,6 +9,6 @@ As per our incident response protocol, please find attached a detailed report ou
 Please do not hesitate to contact me directly if you require any additional information or clarification regarding this matter.
 
 Sincerely,
-[Your Name]
-[Your Position]
-[Your Contact Information]
+[Your Name]  
+[Your Position]  
+[Your Contact Information]  
