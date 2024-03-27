@@ -3,6 +3,8 @@
 ## Introduction
 This playbook outlines the incident response protocol for handling business critical incidents within our organization. It defines the roles and responsibilities of key personnel and provides a structured approach to managing incidents effectively.
 
+**Note:** Ensure that this playbook is regularly reviewed and updated to reflect any changes in key personnel or contact information. Regular drills and training sessions should also be conducted to familiarize all relevant staff with the incident response procedures outlined in this playbook.
+
 ## Key Contacts
 
 1. **CEO - Mr. Percy**
