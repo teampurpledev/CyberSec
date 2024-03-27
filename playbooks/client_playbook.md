@@ -53,4 +53,6 @@ This playbook outlines the incident response protocol for handling business crit
 
 ## References
 
-CISA. (2021, November). *Federal Government Cybersecurity Incident & Vulnerability Response Playbooks*. https://www.cisa.gov/sites/default/files/2024-03/Federal_Government_Cybersecurity_Incident_and_Vulnerability_Response_Playbooks_508C.pdf
+CISA. (2021, November). *Federal Government Cybersecurity Incident & Vulnerability Response Playbooks*. https://www.cisa.gov/sites/default/files/2024-03/Federal_Government_Cybersecurity_Incident_and_Vulnerability_Response_Playbooks_508C.pdf  
+
+Google. (n.d.). *Top security playbooks*. Google. https://inthecloud.withgoogle.com/top-security-playbooks/on-demand.html
