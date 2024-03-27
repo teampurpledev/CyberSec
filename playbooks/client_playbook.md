@@ -47,4 +47,4 @@ TBD
 
 ## Sample Communication Letter/Template
 
-TBD
+[Escalate to CEO](https://github.com/teampurpledev/CyberSec/blob/main/email_templates/escalate_to_CEO.md)
