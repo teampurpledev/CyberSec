@@ -4,8 +4,7 @@
 
 This report aims to outline the current minimum encryption standards and explain how contemporary security methodologies fortify our company against potential cyber threats.
 
-Organizations prioritizing confidentiality and data integrity refrain from storing sensitive data in plaintext. To ensure robust protection, cybersecurity professionals employ encryption techniques with extended key lengths (e.g., 2048 bits), leverage secure hashing algorithms for data integrity validation (e.g., SHA-256), and implement advanced encryption standards (e.g., AES-256).
-
+Organizations prioritizing confidentiality and data integrity refrain from storing sensitive data in plaintext. To ensure robust protection, cybersecurity professionals employ encryption techniques with extended key lengths (e.g., 2048 bits), leverage secure hashing algorithms for data integrity validation (e.g., SHA-256), and implement advanced encryption standards (e.g., RSA, AES-256). Finally, we will conclude with a maturing technology that can solve one of the issues all models currently face, the exchanging of keys.
 
 ## Understanding Encryption Methods
 
@@ -15,12 +14,31 @@ Your message in plaintext -> Cryptographic algorithm that encrypts data -> Ciphe
 
 Encryption relies on cryptographic algorithms and keys to encode and decode data. Two primary methods, symmetric and asymmetric encryption, dictate the exchange and management of these keys.
 
-* Symmetric Encryption: Employing a shared key between sender and receiver, symmetric encryption offers efficiency but poses risks if the key is compromised.
+### Symmetric encryption
 
-* Asymmetric Encryption: Utilizing unique public and private key pairs, asymmetric encryption provides enhanced security but demands more processing power.
+Symmetric encryption employs a shared key between the sender and receiver, offering efficiency in the encryption and decryption process. However, it poses risks if the shared key is compromised, as both parties rely on the same key for secure communication.
 
+Examples:
+* Advanced Encryption Standard (AES): Widely used for its robustness and speed, AES is the standard for encrypting sensitive data.
+* ChaCha20: An alternative to AES, known for its efficiency on mobile devices and software implementations, providing high security and performance.
 
-### Assessing Encryption Strength
+### Asymmetric Encryption
+
+Asymmetric encryption utilizes unique public and private key pairs, providing enhanced security since the private key is never shared. This method, however, demands more processing power due to its complex mathematical operations.
+
+Examples:
+* RSA: A widely used encryption and decryption algorithm that relies on the computational difficulty of factoring large integers.
+* Diffie-Hellman Key Exchange (DHKE): A method that allows two parties to securely share a common secret key over an insecure channel, essential for establishing secure communications.
+
+### Hashing
+
+Hashing is a process that converts data into a fixed-size string of characters, which typically appears as a random sequence of letters and numbers. It is used primarily for data integrity verification and ensuring that data has not been altered.
+
+Examples:
+* SHA-256: Part of the SHA-2 family, SHA-256 generates a 256-bit hash and is widely used in various security protocols, including SSL/TLS and blockchain technology.
+* bcrypt: Designed for securely hashing passwords, bcrypt incorporates a salt to protect against rainbow table attacks and allows for adjusting computational cost to remain resilient against brute force attacks.
+
+## Assessing Encryption Strength
 
 The strength of encryption is measured by the complexity of breaking it through brute force techniques. Key size and algorithm selection significantly influence encryption security.
 
@@ -32,7 +50,7 @@ An algorithm that is 64-bit secure means that an attacker will have to perform u
 
 There are many 64-bit block ciphers, such as 3DES and Blowfish, that are still widely supported in Internet security protocols such as TLS, SSH, and IPsec.[1]
 
-The problem with ciphers that are only 64-bit in length or less is that have been found to be vulnerable to a birthday attack as demonstrated in the TLS vulnerability CVE-2016-2183.
+The issue with these shorter length ciphers is that they are vulnerable to a birthday attack as demonstrated in the TLS vulnerability CVE-2016-2183.
 
 In 2016, researchers at Inria, the French national institute for research in digital science and technology, were able to recover valuable secrets such as HTTP cookies and passwords in under 40 hours using Sweet32 birthday attack on 3DES encryption.[1]
 
@@ -46,17 +64,21 @@ Given the secure design and , AES is considered secure by NIST standards.[2]
 
 ## Encryption recommendations
 
-To lower operational costs (processing power) organizations can use asymmetric-key encryption (e.g., RSA, Diffie-Hellman key exchange method (DHKE)) for limited access data such as account credentials.
+While ideally you would run the most secure encryption methods all the time, in reality you need to strike a balance between performance and security.
 
-For bulk data such as email and high-traffic databases, organizations should use the aforementioned use AES to encrypt messages between the server and client.
+For example, AES (symmetric encryption) is significantly faster than RSA (asymmetric encryption) because it requires fewer computational resources. This makes AES more suitable for encrypting large volumes of data, while RSA is used primarily for encrypting small pieces of data like encryption keys.
 
-For hashing data to validate integrity, the organization can use the NIST approved SHA-256 hashing algortithm.
+To lower operational costs (processing power), organizations can use asymmetric-key encryption (e.g., RSA, Diffie-Hellman Key Exchange (DHKE)) for limited access data such as account credentials, API keys, and session tokens.
+
+For bulk data such as email and high-traffic databases, organizations should use the aforementioned AES to encrypt messages between the server and client.
+
+For hashing data to validate integrity, the organization can use the NIST-approved SHA-256 hashing algorithm.[2]
 
 ## Good news on the horizon
 
 There is an exciting new field of privacy-enhancing cryptography (PEC) that leverages maturing techniques such as secure multiparty computation (SMPC), private set intersection (PSI), private information retrieval (PIR), zero knowledge proofs (ZKP), and fully homomorphic encryption (FHE) to protect privacy while enabling the computation of useful statistics.[3]
 
-In zero knowledge proof encryption you never share your private key, the protocol only gives clues about the key's value.
+In zero knowledge proof (ZPK) encryption you never share your private key, the protocol only gives clues about the key's value.
 
 The receipient must answer a series of validations based on those clues to validate that they are the intended recipient.
 
