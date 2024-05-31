@@ -1,0 +1,61 @@
+red_deck:
+  - ttp_name: Denial of Service
+    cia_stats_impact:
+      c: 0
+      i: 0
+      a: -3
+    description: Overwhelming a system or network to make it unavailable to users, disrupting normal operations.
+  - ttp_name: Stored Data Manipulation
+    cia_stats_impact:
+      c: 0
+      i: -3
+      a: 0
+    description: Altering data stored on a system to cause harm or achieve malicious goals, compromising data accuracy.
+  - ttp_name: Phishing
+    cia_stats_impact:
+      c: -2
+      i: 0
+      a: 0
+    description: Using deceptive emails or messages to trick users into revealing sensitive information or credentials.
+  - ttp_name: Ransomware
+    cia_stats_impact:
+      c: -3
+      i: 0
+      a: -3
+    description: Encrypting data and demanding payment for decryption keys, making data inaccessible and compromising confidentiality.
+  - ttp_name: Credential Dumping
+    cia_stats_impact:
+      c: -2
+      i: 0
+      a: 0
+    description: Extracting account credentials from systems to gain unauthorized access to resources.
+  - ttp_name: Man-in-the-Middle Attack
+    cia_stats_impact:
+      c: -2
+      i: -2
+      a: 0
+    description: Intercepting and potentially altering communications between two parties without their knowledge.
+  - ttp_name: Data Exfiltration
+    cia_stats_impact:
+      c: -3
+      i: 0
+      a: 0
+    description: Unauthorized transfer of data from an organization, leading to information leakage and loss.
+  - ttp_name: Supply Chain Attack
+    cia_stats_impact:
+      c: 0
+      i: -2
+      a: -1
+    description: Compromising third-party services or software used by the target to introduce vulnerabilities.
+  - ttp_name: SQL Injection
+    cia_stats_impact:
+      c: 0
+      i: -3
+      a: 0
+    description: Inserting malicious SQL queries into input fields to manipulate database operations and extract or alter data.
+  - ttp_name: Exploit Public-Facing Application
+    cia_stats_impact:
+      c: 0
+      i: -2
+      a: -2
+    description: Taking advantage of vulnerabilities in internet-facing applications to disrupt services or modify data.

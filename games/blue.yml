@@ -1,0 +1,73 @@
+blue_deck:
+  - role_name: Security Analyst
+    cia_stats:
+      c: 2
+      i: 2
+      a: 2
+    description: Security Analysts monitor and analyze security events, identify threats, and respond to incidents to protect systems.
+  - role_name: Developer
+    cia_stats:
+      c: 1
+      i: 2
+      a: 2
+    description: Developers write and maintain secure code, ensuring that applications are resistant to attacks and vulnerabilities.
+  - role_name: DevOps
+    cia_stats:
+      c: 1
+      i: 1
+      a: 3
+    description: DevOps engineers maintain and optimize infrastructure, ensuring high availability and integrating security practices into the deployment process.
+  - role_name: CTO
+    cia_stats:
+      c: 1
+      i: 1
+      a: 1
+    description: The Chief Technology Officer oversees the organization's technology strategy, balancing security priorities with business needs.
+  - role_name: Threat Hunter
+    cia_stats:
+      c: 2
+      i: 2
+      a: 1
+    description: Threat Hunters proactively search for signs of threats and compromise within the network, aiming to identify and mitigate risks.
+  - role_name: Vulnerability Engineer
+    cia_stats:
+      c: 1
+      i: 2
+      a: 2
+    description: Vulnerability Engineers identify and remediate security weaknesses in systems and applications to prevent exploitation.
+  - role_name: Incident Responder
+    cia_stats:
+      c: 2
+      i: 2
+      a: 2
+    description: Incident Responders manage and mitigate security incidents, working to restore normal operations quickly while minimizing damage.
+  - role_name: Security Architect
+    cia_stats:
+      c: 2
+      i: 3
+      a: 2
+    description: Security Architects design and implement security structures and frameworks to protect the organization's information systems.
+  - role_name: Penetration Tester
+    cia_stats:
+      c: 2
+      i: 3
+      a: 1
+    description: Penetration Testers simulate attacks on systems to identify and address vulnerabilities before malicious actors can exploit them.
+  - role_name: Compliance Officer
+    cia_stats:
+      c: 2
+      i: 2
+      a: 1
+    description: Compliance Officers ensure the organization adheres to regulatory requirements and internal policies, safeguarding data integrity and privacy.
+  - role_name: Security Trainer
+    cia_stats:
+      c: 2
+      i: 2
+      a: 2
+    description: Security Trainers educate employees on best practices and protocols to enhance overall security awareness and reduce human-related risks.
+  - role_name: CEO
+    cia_stats:
+      c: -1
+      i: -1
+      a: 3
+    description: The Chief Executive Officer focuses on business growth and continuity, which can sometimes lead to prioritizing availability over strict security controls.
