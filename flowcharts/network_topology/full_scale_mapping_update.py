@@ -7,7 +7,7 @@ nodes = [
     ("Desktop PC", {"pos": (0, 9)}),
     ("Laptop", {"pos": (2, 9)}),
     ("Tablet", {"pos": (2, 7)}),
-    ("Phone", {"pos": (2, 6)}),
+    ("Phone", {"pos": (1, 10)}),
     ("IP Phone", {"pos": (0, 7)}),
     ("Switch", {"pos": (1, 6)}),
     ("Firewall", {"pos": (1, 4)}),
