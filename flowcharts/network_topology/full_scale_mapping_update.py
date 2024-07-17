@@ -46,7 +46,7 @@ G.add_edges_from(edges)
 pos = nx.get_node_attributes(G, 'pos')
 
 # Draw the graph
-plt.figure(figsize=(12, 8))
-nx.draw(G, pos, node_size=3000, node_color="purple", edge_color="gray")
-nx.draw_networkx_labels(G, pos, font_size=12, font_color='k', font_weight='bold')
+plt.figure()
+nx.draw(G, pos, node_size=4500, node_color="purple", edge_color="gray")
+nx.draw_networkx_labels(G, pos, font_size=12, font_weight='bold')
 plt.show()
