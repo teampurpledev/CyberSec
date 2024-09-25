@@ -1,7 +1,9 @@
 #!/usr/bin/perl
+## THIS IS DESIGNED BY/FOR WEB SECURITY TEST PURPOSES
+## SCRIPT USED TO GENERATE BAD XML PAYLOADS
 
-$DEPTH = 26;
-$TAGLEN = 8;
+$DEPTH = 26; ## raise depth to create deeper nests
+$TAGLEN = 8; ## raise tag length to create longer tags
 
 sub randomTag {
     my $tag = "";
