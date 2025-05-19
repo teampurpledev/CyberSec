@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# Simulate Billion Laughs attack
+# Simulate Billion Laughs attack, fill memory with recursive XML references of "Ha"
 $entities = 30;
 $i = 1;
 
